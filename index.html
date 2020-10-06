@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vusi Vuyani</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <a href="#default" class="logo">VVT</a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">about</a>
+      <a href="#education">education</a>
+      <a href="#experience">experience</a>
+      <a href="#skills">skills</a>
+      <a href="#contacts">contacts</a>
+    </div>
+  </div>
+
+  <section class="container about" id="about" style="display: flex;justify-content: space-around;align-items: center;">
+    <div class="text-box">
+      <div class="col-6">
+        <h2 >About</h1>
+          <p >Highly organized and
+            detail-oriented BSc IT final
+            year student from North
+            West University seeking an
+            entry level position as an IT
+            junior technician.
+            I am an ambitious, innovative and
+            imaginative person with great
+            passion for technology and
+            computers. I have excellent
+            communication and problem-solving
+            skills. My mindset is to excel in
+            everything I do leading me to
+            reaching my life goals.</p>
+      </div>
+    </div>
+
+    <div class="image-box">
+      <img src="vertical.JPG" alt="">
+    </div>
+  </section>
+  <section class="container education" id="education">
+    <div class="text-box">
+      <h2>Education</h2>
+      <h3>Bechelor of Science Information Technology</h3>
+      <h4>North-West University</h4>
+      <ul>
+        <li>Programming <small>Java, C#</small></li>
+        <li>Databases <Small>MongoDb,MariaDb,MySql</Small></li>
+        <li>Operating Systems</li>
+        <li>Systems Analysis and Design</li>
+        <li>Networks</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container experience" id="experience"
+    style="display: flex;justify-content: space-around;align-items: center;">
+    <div class="text-box" style="width:50%">
+      <h3 ">Personal Experience</h3>
+      <ul>
+        <li>Software Maintance</li>
+        <li>Operating Systems Installation (Windows and Linux)</li>
+        <li>Microsoft Utilities</li>
+        <li>Visual Studio 2015-19</li>
+
+      </ul>
+    </div>
+    <div class="text-box" style="width:50%">
+      <h3 ">Personal Achievement</h3>
+      <ul >
+        <li>Google Digital Marketing</li>
+        <li>Penreach Leadership Certificate</li>
+        <li>International Rotary Certificate</li>
+        <li>.</li>
+        <li>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container skills" id="skills">
+    <div class="text-box">
+      <h2>Skills</h2>
+      <ul>
+        <li>Digital Marketing </li>
+        <li>Critical Thinking </li>
+        <li>Excellent Communication</li>
+        <li>Microsoft Utilities</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="min-height:50vh;display: flex;padding:0;flex-direction:column;align-items: center;">
+
+    <div class="vid-container">
+      <h2 style=" text-align:center">Upskill Resourse</h2>
+    <p>This are some of the resources that i use to learn new things and upskills</p>
+    <div id="videos" style="display: flex; justify-content: space-around;align-items: center;padding: 10px;">
+
+    </div>
+  </div>
+  </section>
+  
+
+
+  <div class="portfolio" ">
+      <h2 style=" text-align:center">Get in touch</h2>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>Contacts</h2>
+            <p>cell : 012 456 7890</p>
+            <p><a>email@emaill.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>Contacts</h2>
+            <p>cell : 012 456 7890</p>
+            <p><a>email@emaill.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>Contacts</h2>
+            <p>cell : 012 456 7890</p>
+            <p><a>email@emaill.com</a></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    fetch(
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&maxResults=3&key=AIzaSyCWazfpD8aOerfQo6k_dB-Ov1MAdT_6oVM&type=video&q=Ted+4IR"
+        )
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        data.items.forEach(item => {
+
+          console.log(item.id.videoId)
+          let f = document.createElement('iframe')
+          f.height = 200;
+          f.width = 400;
+          f.marginWidth
+          f.allowFullscreen = true;
+          f.frameBorder = 0;
+          f.src = "http://www.youtube.com/embed/" + item.id.videoId
+          document.getElementById("videos").append(f)
+        });
+
+      })
+  </script>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
