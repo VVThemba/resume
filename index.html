@@ -137,9 +137,11 @@
       <div class="column">
         <div class="card">
           <div class="container">
-            <h2>Contacts</h2>
-            <p>cell : 012 456 7890</p>
-            <p><a>email@emaill.com</a></p>
+            <h2>Github</h2>
+            <p id="gname">Username: </p>
+            <p id="grepos">repos: </p>
+            <p id="gist">gist: </p>
+            <p><a id ="glink">email@emaill.com</a></p>
           </div>
         </div>
       </div>
@@ -171,6 +173,19 @@
         });
 
       })
+  </script>
+  <script>
+    fetch("http://api.github.com/users/techeraa")
+    .then(response => response.json())
+    .then( data =>{
+      console.log(data)
+      document.getElementById('gname').textContent = data.login
+      document.getElementById('grepos').textContent = data.public_repos
+      document.getElementById('gist').textContent = data.public_gists
+      document.getElementById('glink').src = data.url
+
+    })
+
   </script>
 
   <script src="index.js"></script>
