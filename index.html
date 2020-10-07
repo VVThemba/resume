@@ -9,7 +9,9 @@
 </head>
 
 <body>
-  <div class="header">
+  
+  <section class="header-sec" style="padding:0;max-height:80px;min-height: 100px;">
+    <div class="header">
     <a href="#default" class="logo">VVT</a>
     <div class="header-right">
       <a class="active" href="#home">Home</a>
@@ -20,6 +22,8 @@
       <a href="#contacts">contacts</a>
     </div>
   </div>
+  </section>
+  
 
   <section class="container about" id="about" style="display: flex;justify-content: space-around;align-items: center;">
     <div class="text-box">
@@ -127,7 +131,7 @@
       <div class="column">
         <div class="card">
           <div class="container">
-            <h2>Contacts</h2>
+            <h2>LinkedIn</h2>
             <p>cell : 012 456 7890</p>
             <p><a>email@emaill.com</a></p>
           </div>
@@ -173,8 +177,7 @@
         });
 
       })
-  </script>
-  <script>
+      
     fetch("http://api.github.com/users/techeraa")
     .then(response => response.json())
     .then( data =>{
@@ -182,11 +185,11 @@
       document.getElementById('gname').textContent = data.login
       document.getElementById('grepos').textContent = data.public_repos
       document.getElementById('gist').textContent = data.public_gists
-      document.getElementById('glink').src = data.url
+      document.getElementById('glink').textContent = data.url
 
     })
-
   </script>
+
 
   <script src="index.js"></script>
 </body>
