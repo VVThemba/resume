@@ -133,7 +133,7 @@
           <div class="container">
             <h2>LinkedIn</h2>
             <p></p>
-            <p><a href="">Vusi Themba</a></p>
+            <p><a href="https:/www.linkedin.com/in/vusi-themba-03164711a/">Vusi Themba</a></p>
             <br>
             <br>
             <br>
@@ -150,7 +150,7 @@
             <p id="gname">Username: </p>
             <p id="grepos">repos: </p>
             <p id="gist">gist: </p>
-            <p><a id ="glink">email@emaill.com</a></p>
+            <p id ="glink"></p>
           </div>
         </div>
       </div>
@@ -183,14 +183,18 @@
 
       })
       
-    fetch("http://api.github.com/users/techeraa")
+    fetch("http://api.github.com/users/VVThemba")
     .then(response => response.json())
     .then( data =>{
       console.log(data)
       document.getElementById('gname').textContent = data.login
       document.getElementById('grepos').textContent = data.public_repos
       document.getElementById('gist').textContent = data.public_gists
-      document.getElementById('glink').textContent = data.url
+      let alink = document.createElement('a')
+      alink.setAttribute('href',data.url)
+      alink.textContent = 'See More'
+      document.getElementById('glink').append(alink)
+      
 
     })
   </script>
